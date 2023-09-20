@@ -5,59 +5,72 @@ $text-color: #724d2b;
 $button-orange: #ef6c54;
 $background-brown: #a87c4f;
 
-body#home-page {
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body#landing-page {
   padding: 0;
   margin: 0;
   font-family: 'Helvetica Neue','Arial','sans-serif';
+  font-family: "adelle-sans"; // I don't know what 
   font-weight: 500;
-  font-family: "adelle-sans";
   font-size: 16px;
   color: $text-color;
-  text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 400;
   font-style: normal;
   line-height: 1em;
-}
-
-.wrapper {
-  position: absolute;
-  background: url("coverpage4.png") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;;
-  width: 100%;
-  height: 100%;
-}
-
-.homepage-buttons {
-  position: fixed;
-  top: 50%;
-  margin: 0 auto;
-  display: flex; 
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  width: 100%;
-  a {
-    background-color: transparent;
-    color: $button-orange;
-    border: 2px solid $button-orange;
-    transition: color 170ms ease-in-out, border-color 170ms ease-in-out;
-    display: flex;
-    text-decoration: none;
-    padding: 1em 1.44em;
+  .overlay {
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    text-rendering: optimizeLegibility;
+    top: 0;
+    width: 100%;
+    background: $background-brown;
+  }
+  .wrapper {
+    position: absolute;
+    background: url("coverpage4.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;;
+    width: 100%;
+    height: 100%;
+  }
+  .center-block {
+    position: fixed;
+    top: 50%;
+    margin: 0 auto;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
     text-align: center;
-    margin: 0;
-    // IDK why, but without the negative margin, the buttons aren't centered
-    &:first-of-type { margin: 0 0.5rem 0 -0.5rem; }
-    &:last-of-type { margin-left: 0.5rem; }
-    &:hover,
-    &:focus,
-    &.focus {
-      background-color: $button-orange;
-      color: $text-color;
+    a {
+      background-color: transparent;
+      text-transform: uppercase;
+      color: $button-orange;
+      border: 2px solid $button-orange;
+      transition: color 170ms ease-in-out, border-color 170ms ease-in-out;
+      display: flex;
+      text-decoration: none;
+      padding: 1em 1.44em;
+      text-align: inherit;
+      margin: 0;
+      // IDK why, but without the negative margin, the buttons aren't centered
+      &:first-of-type { margin: 0 0.5rem 0 -0.5rem; }
+      &:last-of-type { margin-left: 0.5rem; }
+      &:hover,
+      &:focus,
+      &.focus {
+        background-color: $button-orange;
+        color: $text-color;
+      }
     }
   }
 }
