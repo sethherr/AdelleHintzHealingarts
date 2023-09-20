@@ -18,21 +18,25 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: Adelle Hintz Healing Arts
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  I began my study of massage and bodywork in 2009, in Portland OR.
+  After graduating from East West College of the Healing Arts I began
+  to pursue my career as a massage therapist. At the same time I began
+  studying internal martial arts, practicing movement through breath
+  and studying five element theory. I combine my knowledge of Eastern
+  and Western philosophies in a unique way that blend, Tui na,
+  Deep Tissue, Myofascial Release, Acupressure and Cranial Sacral 
+  techniques to create a connected and therapeutic session.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+theme:
+plugins: []
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -42,12 +46,12 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
+exclude:
+  - README.markdown
+  - .sass-cache/
+  - .jekyll-cache/
+  - Gemfile
+  - Gemfile.lock
 #   - node_modules/
 #   - vendor/bundle/
 #   - vendor/cache/
