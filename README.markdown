@@ -1,13 +1,12 @@
 # Adelle Hintz Healingarts
 
-Correct URL: http://www.adellehintzhealingarts.com/
+**http://www.adellehintzhealingarts.com/**
 
-Github pages url: https://sethherr.github.io/AdelleHintzHealingarts/
+
+GitHub pages url: https://sethherr.github.io/AdelleHintzHealingarts/
 
 ---
 
-Built with jekyll, for local development run:
+Built with jekyll, for local development run `./start.sh` 
 
-```bash
-jekyll serve --livereload
-```
+(which runs `bundle exec jekyll serve --livereload`)
