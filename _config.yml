@@ -18,8 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-url: "https://sethherr.github.io/AdelleHintzHealingarts"
-github_username:  sethherr
+# url: "https://sethherr.github.io/AdelleHintzHealingarts"
+# github_username:  sethherr
 
 title: Adelle Hintz Healing Arts
 # email: 
