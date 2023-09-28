@@ -1,0 +1,40 @@
+---
+title: About me
+---
+{% include header.html %}
+<body class="page-body">
+  <div class="canvas">
+    <header>
+      <div class="header-logo">
+        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/logo.png" alt="Adelle Hintz Healing Arts"></a>
+      </div>
+      <nav id="topNav">
+        <ul>
+          <li><a data-target="/" href="{{ site.baseurl }}/">Home</a></li>
+          <li><a data-target="about-me" href="{{ site.baseurl }}/about-me">About Me</a></li>
+          <li><a data-target="book-now" href="{{ site.baseurl }}/book-now">Book Now</a></li>
+        </ul>
+      </nav>
+      <div class="page-divider"></div>
+    </header>
+    <div class="main">
+      Something
+    </div>
+    <footer>
+      2023 © &nbsp;ADELLE HINTZ HEALING ARTS * &nbsp;CMT #53791 CA * ADELLEHINTZ.MASSAGE@GMAIL.COM
+    </div>
+  </div>
+  <!-- lazy hack to set active page in top nav -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      var currentPath = window.location.href.split("/").slice(-1)[0];
+      document.querySelectorAll('#topNav a')
+        .forEach(el => {
+          if (el.getAttribute('data-target') === currentPath) {
+            el.classList.add('active')
+          }
+        })
+    })
+  </script>
+</body>
+</html>
