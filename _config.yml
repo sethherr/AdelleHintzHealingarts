@@ -18,8 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+baseurl: "/AdelleHintzHealingarts"
+github_username:  sethherr
+
 title: Adelle Hintz Healing Arts
-email: your-email@example.com
+# email: 
 description: >- # this means to ignore newlines until "baseurl:"
   I began my study of massage and bodywork in 2009, in Portland OR.
   After graduating from East West College of the Healing Arts I began
