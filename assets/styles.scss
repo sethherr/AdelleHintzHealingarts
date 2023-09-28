@@ -17,6 +17,7 @@ $link-color-border: $border-color;
 html {
   width: 100%;
   height: 100%;
+  background-color: rgb(248,228,208);
 }
 
 body {
@@ -25,7 +26,7 @@ body {
   // adelle-sans is unknown - but keeping anyway
   font-family: "adelle-sans", "Helvetica Neue","Arial","sans-serif";
   font-weight: 200;
-  font-size: 16px;
+  font-size: 14px;
   color: $text-color;
   letter-spacing: 2px;
   font-style: normal;
@@ -33,130 +34,6 @@ body {
   a {
     color: $link-color;
     cursor: pointer;
-  }
-}
-
-.main-content {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  opacity: 1;
-  position: relative;
-}
-
-header {
-  .header-logo {
-    width: 100%;
-    a {
-      display: block;
-    }
-    img {
-      padding: 0;
-      margin: 0 auto;
-      display: block;
-      max-height: 231px;
-    }
-  }
-  nav {
-    z-index: 100;
-    margin: 29px 0 0;
-    width: 100%;
-    text-align: center;
-    padding: 0 14px;
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    line-height: 1.6em;
-    position: relative;
-    ul {
-      list-style-type: none;
-      display: inline-block;
-      background: $canvas-background;
-      padding: 0 14px;
-      margin: 0;
-    }
-    li {
-      display: inline-block;
-      padding: 0 14px;
-      margin: 0;
-    }
-    a {
-      text-transform: uppercase;
-      color: $link-color;
-      border-bottom-color: transparent;
-      border-bottom-style: solid;
-      border-bottom-width: 1px;
-      display: inline-block;
-      text-decoration: none;
-      transition: opacity 170ms ease-in-out, border-color 170ms ease-in-out;
-      padding: 0;
-      font-size: 14px;
-      &:hover,
-      &:active,
-      &.active,
-      &:focus,
-      &.focus {
-        color: $link-color-hover;
-        border-bottom-color: $link-color-border;
-      }
-    }
-  }
-  .page-divider {
-    position: relative;
-    z-index: 1;
-    line-height: 1.6em;
-    margin-top: -1em;
-    margin-bottom: 1.6em;
-    font-size: 14px;
-    border-bottom: 1px solid $border-color;
-  }
-}
-
-.safe-space {
-  border-top: 1px $border-color solid;
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  p {
-    padding-top: 17px;
-    display: flex;
-  }
-  .social-links {
-    display: flex;
-    text-align: right;
-  }
-  .facebook {
-    display: block;
-    transition: fill 170ms ease-in-out;
-    fill: #333;
-    svg {
-      display: block;
-      height: 37px;
-      width: auto;
-    }
-  }
-}
-
-footer {
-  border-top: 1px $border-color solid;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 11px
-}
-
-.page-body {
-  background: url("background-page.png") no-repeat center center; 
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  .canvas {
-    border: 1px solid $border-color;
-    background-color: $canvas-background;
-    max-width: 1120px;
-    margin: 60px auto;
-    padding: 80px 80px 0;
   }
 }
 
@@ -171,6 +48,7 @@ footer {
   text-align: inherit;
   font-family: "Varela Round", "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
+  font-size: 16px;
   &:hover,
   &:active,
   &.active,
@@ -196,6 +74,214 @@ footer {
   }
 }
 
+.horizontal-rule {
+  position: relative;
+  height: auto;
+  padding: 18px 0;
+  hr {
+    color: $border-color;
+    background-color: $border-color;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    border-width: 0;
+  }
+}
+
+// 
+// Page: about-me
+// 
+.page-about-me {
+  margin: 0 60px;
+  padding: 20px 0;
+  .hero {
+    padding: 0 0 18px;
+    h1, h2 {
+      text-align: center;
+      margin: 28px 0 0;
+      font-size: 28px;
+      line-height: 1.3em;
+      letter-spacing: 1px;
+      font-weight: 300;
+      font-style: normal;
+    }
+    h2 {
+      font-size: 16px;
+      span {
+        margin: 0 1em;
+        display: inline-block;
+      }
+    }
+  }
+  .about-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 18px 0;
+    .about-text {
+      position: relative;
+      text-align: center;
+      padding: 28px 18px 0 0;
+
+      p {
+        line-height: 1.8em;
+        margin: 0 0 1.8em;
+      }
+    }
+    .about-image {
+      position: relative;
+      img {
+        display: block;
+        max-width: 400px;
+        height: auto;
+        padding: 18px 0 18px 18px;
+      }
+    }
+  }
+}
+
+// 
+// Layout: page
+// 
+
+.page-body {
+  background: url("background-page.png") no-repeat top center; 
+  background-size: cover;
+  width: 100%;
+  min-height: 100%;
+  padding: 60px 0;
+
+  .canvas {
+    position: relative;
+    box-sizing: content-box;
+    z-index: 1;
+    border: 1px solid $border-color;
+    background-color: $canvas-background;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 88px 80px 0;
+  }
+
+  .main-content {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    opacity: 1;
+    position: relative;
+  }
+
+  header.page-body-header {
+    display: block;
+    clear: both;
+    .header-logo {
+      width: 100%;
+      a {
+        display: block;
+      }
+      img {
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+        max-height: 231px;
+      }
+    }
+    nav {
+      z-index: 100;
+      margin: 29px 0 0;
+      width: 100%;
+      text-align: center;
+      padding: 0 14px;
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      line-height: 1.6em;
+      position: relative;
+      ul {
+        list-style-type: none;
+        display: inline-block;
+        background: $canvas-background;
+        padding: 0 14px;
+        margin: 0;
+      }
+      li {
+        display: inline-block;
+        padding: 0 14px;
+        margin: 0;
+      }
+      a {
+        text-transform: uppercase;
+        color: $link-color;
+        border-bottom-color: transparent;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        display: inline-block;
+        text-decoration: none;
+        transition: opacity 170ms ease-in-out, border-color 170ms ease-in-out;
+        padding: 0;
+        &:hover,
+        &:active,
+        &.active,
+        &:focus,
+        &.focus {
+          color: $link-color-hover;
+          border-bottom-color: $link-color-border;
+        }
+      }
+    }
+    .page-divider {
+      position: relative;
+      z-index: 2;
+      line-height: 1.6em;
+      margin-top: -1em;
+      margin-bottom: 1.6em;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  .safe-space {
+    border-top: 1px $border-color solid;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 20px 0;
+    p {
+      display: flex;
+    }
+    .social-links {
+      display: flex;
+      text-align: right;
+    }
+    .facebook {
+      display: block;
+      fill: #333;
+      transition: fill 170ms ease-in-out;
+      margin: 2px 0 0;
+      &:hover, &:active {
+        fill: #777;
+      }
+      svg {
+        display: block;
+        height: 37px;
+        width: auto;
+      }
+    }
+  }
+
+  footer.page-body-footer {
+    border-top: 1px $border-color solid;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 11px
+  }
+}
+
+// 
+// Page: Landing/home
+// 
 .landing-body {
   .overlay {
     height: 100%;
@@ -233,6 +319,17 @@ footer {
   }
 }
 
+// 
+// Page: 404
+// 
+
 #page-404 {
-  padding: 40px 0;
+  padding: 40px 40px;
+  p, li {
+    margin-top: 1rem;
+  }
+  ul {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 }
