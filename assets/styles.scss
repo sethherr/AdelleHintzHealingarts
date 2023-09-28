@@ -11,7 +11,7 @@ $link-color-hover: #ef6c55;
 $link-color-border: $border-color;
 
 $breakpoint-large: 1120px;
-$breakpoint-small: 770px;
+$breakpoint-small: 640px;
 
 
 *, *::before, *::after {
@@ -20,7 +20,6 @@ $breakpoint-small: 770px;
 
 html {
   width: 100%;
-  height: 100%;
   background-color: rgb(248,228,208);
 }
 
@@ -32,7 +31,7 @@ body {
   font-weight: 200;
   font-size: 14px;
   color: $text-color;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-style: normal;
   line-height: 1em;
   a {
@@ -81,6 +80,10 @@ body {
 .upcase {
   text-transform: uppercase;
 }
+.clearfix {
+  clear: both;
+  height: 0;
+}
 
 .horizontal-rule {
   position: relative;
@@ -101,7 +104,7 @@ body {
 // Page: about-me
 // 
 .page-about-me {
-  margin: 0 60px;
+  margin: 0;
   padding: 20px 0;
   .hero {
     padding: 0 0 18px;
@@ -123,30 +126,49 @@ body {
     }
   }
   .about-body {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
+    display: block;
     padding: 18px 0;
-    .about-text {
-      position: relative;
-      text-align: center;
-      padding: 28px 18px 0 0;
-
-      p {
-        line-height: 1.8em;
-        margin: 0 0 1.8em;
-      }
+    position: relative;
+  }
+  .about-text {
+    position: relative;
+    text-align: center;
+    padding: 28px 0 0 0;
+    width: 100%;
+    p {
+      line-height: 1.8em;
+      margin: 0 0 1.8em;
     }
+  }
+  .about-image {
+    position: relative;
+    width: 100%;
+    padding: 18px;
+    img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  .page-about-me {
+    margin-right: 60px;
+    margin-left: 60px;
     .about-image {
-      position: relative;
-      img {
-        display: block;
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        padding: 18px 0 18px 18px;
-      }
+      float: right;
+      width: 40%;
+      padding-right: 0;
+      margin-left: 18px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .page-about-me {
+    .about-image {
+      width: 400px;
     }
   }
 }
@@ -156,7 +178,7 @@ body {
 // 
 
 .page-body {
-  background: url("background-page.png") no-repeat top center; 
+  background: url("background-page2.png") no-repeat top center;
   background-size: cover;
   width: 100%;
   min-height: 100%;
@@ -169,11 +191,11 @@ body {
     background-color: $canvas-background;
     max-width: $breakpoint-large;
     margin: 0 auto;
-    padding: 88px 0 0;
+    padding: 88px 16px 0;
   }
 
   .main-content {
-    margin-top: 40px;
+    margin-top: 28px;
     margin-bottom: 40px;
     opacity: 1;
     position: relative;
@@ -201,7 +223,7 @@ body {
       margin: 29px 0 0;
       width: 100%;
       text-align: center;
-      padding: 0 14px;
+      padding: 0;
       display: inline-flex;
       flex-direction: row;
       flex-wrap: nowrap;
@@ -218,7 +240,7 @@ body {
       li {
         display: inline-block;
         padding: 0 14px;
-        margin: 0;
+        margin: 0 0 1em;
       }
       a {
         text-transform: uppercase;
@@ -240,33 +262,30 @@ body {
         }
       }
     }
-    .page-divider {
-      position: relative;
-      z-index: 2;
-      line-height: 1.6em;
-      margin-top: -1em;
-      margin-bottom: 1.6em;
-      border-bottom: 1px solid $border-color;
-    }
   }
-
+  .page-divider {
+    position: relative;
+    display: block;
+    z-index: 2;
+    line-height: 1.6em;
+    margin-top: -2em;
+    margin-bottom: 1.6em;
+    border-bottom: 1px solid $border-color;
+  }
   .safe-space {
     border-top: 1px $border-color solid;
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 20px 0;
-    p {
-      display: flex;
-    }
-    .social-links {
-      display: flex;
-      text-align: right;
+    p, .social-links {
+      text-align: center;
+      width: 100%;
     }
     .facebook {
-      display: block;
+      display: inline-block;
       fill: #333;
       transition: fill 170ms ease-in-out;
       margin: 2px 0 0;
@@ -274,7 +293,7 @@ body {
         fill: #777;
       }
       svg {
-        display: block;
+        display: inline-block;
         height: 37px;
         width: auto;
       }
@@ -292,12 +311,28 @@ body {
 @media (min-width: $breakpoint-small) {
   .page-body {
     .canvas {
-      padding-left: 80px;
-      padding-right: 80px;
+      padding-left: 40px;
+      padding-right: 40px;
     }
     header.page-body-header {
+      nav {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
       ul {
-        padding: 0 14px;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+    .safe-space {
+      flex-wrap: nowrap;
+      p {
+        text-align: left;
+        width: auto;
+      }
+      .social-links {
+        text-align: right;
+        width: auto;
       }
     }
   }
@@ -309,6 +344,8 @@ body {
 
     .canvas {
       border: 1px solid $border-color;
+      padding-left: 80px;
+      padding-right: 80px;
     }
   }
 }
