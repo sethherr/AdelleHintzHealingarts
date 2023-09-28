@@ -10,6 +10,10 @@ $link-color: #8c6038;
 $link-color-hover: #ef6c55;
 $link-color-border: $border-color;
 
+$breakpoint-large: 1120px;
+$breakpoint-small: 770px;
+
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -138,6 +142,7 @@ body {
       position: relative;
       img {
         display: block;
+        width: 100%;
         max-width: 400px;
         height: auto;
         padding: 18px 0 18px 18px;
@@ -155,17 +160,16 @@ body {
   background-size: cover;
   width: 100%;
   min-height: 100%;
-  padding: 60px 0;
+  padding: 0;
 
   .canvas {
     position: relative;
     box-sizing: content-box;
     z-index: 1;
-    border: 1px solid $border-color;
     background-color: $canvas-background;
-    max-width: 1120px;
+    max-width: $breakpoint-large;
     margin: 0 auto;
-    padding: 88px 80px 0;
+    padding: 88px 0 0;
   }
 
   .main-content {
@@ -187,7 +191,9 @@ body {
         padding: 0;
         margin: 0 auto;
         display: block;
-        max-height: 231px;
+        width: 100%;
+        max-width: 306px;
+        height: auto;
       }
     }
     nav {
@@ -206,7 +212,7 @@ body {
         list-style-type: none;
         display: inline-block;
         background: $canvas-background;
-        padding: 0 14px;
+        padding: 0;
         margin: 0;
       }
       li {
@@ -280,6 +286,30 @@ body {
     padding: 20px 0;
     text-align: center;
     font-size: 11px
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  .page-body {
+    .canvas {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+    header.page-body-header {
+      ul {
+        padding: 0 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .page-body {
+    padding: 60px;
+
+    .canvas {
+      border: 1px solid $border-color;
+    }
   }
 }
 
