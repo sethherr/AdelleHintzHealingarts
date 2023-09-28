@@ -36,7 +36,7 @@ body {
   }
 }
 
-.main {
+.main-content {
   margin-top: 40px;
   margin-bottom: 40px;
   opacity: 1;
@@ -109,6 +109,33 @@ header {
     margin-bottom: 1.6em;
     font-size: 14px;
     border-bottom: 1px solid $border-color;
+  }
+}
+
+.safe-space {
+  border-top: 1px $border-color solid;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  p {
+    padding-top: 17px;
+    display: flex;
+  }
+  .social-links {
+    display: flex;
+    text-align: right;
+  }
+  .facebook {
+    display: block;
+    transition: fill 170ms ease-in-out;
+    fill: #333;
+    svg {
+      display: block;
+      height: 37px;
+      width: auto;
+    }
   }
 }
 
@@ -204,4 +231,8 @@ footer {
       &:last-of-type { margin-left: 0.5rem; }
     }
   }
+}
+
+#page-404 {
+  padding: 40px 0;
 }
