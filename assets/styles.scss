@@ -27,7 +27,7 @@ body {
   padding: 0;
   margin: 0;
   // adelle-sans is unknown - but keeping anyway
-  font-family: "adelle-sans", "Helvetica Neue","Arial","sans-serif";
+  font-family: "adelle-sans", "Varela Round", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
   font-size: 14px;
   color: $text-color;
@@ -75,23 +75,23 @@ body {
 strong, .strong {
   font-weight: 600;
 }
-
-.mt-3 {
-  margin-top: 1.5em;
-}
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 0.5em; }
+.mt-2 { margin-top: 1em; }
+.mt-3 { margin-top: 1.5em; }
 
 .btn {
   border: 2px solid $button-orange;
   background-color: $button-orange;
-  color: #ebcfb6;
+  color: #fff; // #ebcfb6
   text-transform: uppercase;
   transition: opacity 170ms ease-in-out, border-color 170ms ease-in-out;
   text-decoration: none;
-  padding: 1em 1.44em;
+  padding: 1em 2em;
   text-align: inherit;
-  font-family: "Varela Round", "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
   font-size: 16px;
+  cursor: pointer;
   &:hover,
   &:active,
   &.active,
@@ -137,22 +137,6 @@ strong, .strong {
   padding: 20px 0;
 }
 
-@media (min-width: $breakpoint-small) {
-  .page-body-content {
-    margin-right: 60px;
-    margin-left: 60px;
-  }
-}
-
-// Page: book-now
-
-.page-book-now {
-  .pricing-list strong {
-    display: block;
-
-  }
-}
-
 .row {
   display: flex;
   flex-direction: row;
@@ -160,12 +144,41 @@ strong, .strong {
 }
 
 @media (min-width: $breakpoint-small) {
+  .page-body-content {
+    margin-right: 60px;
+    margin-left: 60px;
+  }
   .col-sm-6 {
     width: 50%;
     padding-right: 17px;
     padding-left: 17px;
   }
 }
+
+//
+// Page: book-now
+//
+
+.form-group {
+  display: block;
+  margin: 0 0 18px;
+  label {
+    display: block;
+    padding-bottom: 4px;
+    cursor: pointer;
+  }
+  input, textarea {
+    background-color: #fafafa;
+    border: 1px solid $border-color;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+  }
+  textarea {
+    min-height: 100px;
+  }
+}
+
 // 
 // Page: about-me
 // 
@@ -429,6 +442,7 @@ strong, .strong {
     text-align: center;
     .btn {
       display: flex;
+      padding: 1em 1.44em;
       // IDK why, but without the negative margin, the buttons aren't centered
       &:first-of-type { margin: 0 0.5rem 0 -0.5rem; }
       &:last-of-type { margin-left: 0.5rem; }
