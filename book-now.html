@@ -20,7 +20,7 @@ layout: page
       <h3 class="text-center">I am  committed to using  only cruelty free products. </h3>
     </div>
     <div class="col-sm-6">
-      <form action="https://www.formbackend.com/f/abcdef" method="POST">
+      <form action="https://usebasin.com/f/4c087565e52c" method="POST">
         <div class="form-group">
           <label for="name-field">Your name <small>(required)</small></label>
           <input type="text" id="name-field" name="name" required=true>
@@ -48,3 +48,17 @@ layout: page
     </div>
   </div>
 </div>
+
+<!-- Analytics for form performance -->
+<script type="text/javascript">
+  function configureAhoy() {
+    ahoy.configure({
+      visitsUrl: "https://usebasin.com/ahoy/visits",
+      eventsUrl: "https://usebasin.com/ahoy/events",
+      page: "4c087565e52c" /* Use your form id here */
+    });
+    ahoy.trackView();
+    ahoy.trackSubmits();
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/ahoy.js@0.3.9/dist/ahoy.min.js" async defer onload="configureAhoy()">
