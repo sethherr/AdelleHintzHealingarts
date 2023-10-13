@@ -38,6 +38,46 @@ body {
     color: $link-color;
     cursor: pointer;
   }
+  h1, h2 {
+    text-align: center;
+    margin: 28px 0 0;
+    font-size: 28px;
+    line-height: 1.3em;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-style: normal;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  h3 {
+    font-size: 1.3em;
+    line-height: 1.5em;
+    font-weight: 400;
+    font-style: normal;
+    margin: 1em 0 0 0.3em;
+  }
+}
+
+.upcase {
+  text-transform: uppercase;
+}
+
+.clearfix {
+  clear: both;
+  height: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+strong, .strong {
+  font-weight: 600;
+}
+
+.mt-3 {
+  margin-top: 1.5em;
 }
 
 .btn {
@@ -77,14 +117,6 @@ body {
   }
 }
 
-.upcase {
-  text-transform: uppercase;
-}
-.clearfix {
-  clear: both;
-  height: 0;
-}
-
 .horizontal-rule {
   position: relative;
   height: auto;
@@ -100,29 +132,49 @@ body {
   }
 }
 
+.page-body-content {
+  margin: 0;
+  padding: 20px 0;
+}
+
+@media (min-width: $breakpoint-small) {
+  .page-body-content {
+    margin-right: 60px;
+    margin-left: 60px;
+  }
+}
+
+// Page: book-now
+
+.page-book-now {
+  .pricing-list strong {
+    display: block;
+
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (min-width: $breakpoint-small) {
+  .col-sm-6 {
+    width: 50%;
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+}
 // 
 // Page: about-me
 // 
 .page-about-me {
-  margin: 0;
-  padding: 20px 0;
   .hero {
     padding: 0 0 18px;
-    h1, h2 {
-      text-align: center;
-      margin: 28px 0 0;
-      font-size: 28px;
-      line-height: 1.3em;
-      letter-spacing: 1px;
-      font-weight: 300;
-      font-style: normal;
-    }
-    h2 {
-      font-size: 16px;
-      span {
-        margin: 0 1em;
-        display: inline-block;
-      }
+    h2 span {
+      margin: 0 1em;
+      display: inline-block;
     }
   }
   .about-body {
@@ -153,23 +205,17 @@ body {
 }
 
 @media (min-width: $breakpoint-small) {
-  .page-about-me {
-    margin-right: 60px;
-    margin-left: 60px;
-    .about-image {
-      float: right;
-      width: 40%;
-      padding-right: 0;
-      margin-left: 18px;
-    }
+  .page-about-me .about-image {
+    float: right;
+    width: 40%;
+    padding-right: 0;
+    margin-left: 18px;
   }
 }
 
 @media (min-width: $breakpoint-large) {
-  .page-about-me {
-    .about-image {
-      width: 400px;
-    }
+  .page-about-me .about-image {
+    width: 400px;
   }
 }
 
